@@ -1,7 +1,7 @@
 package main
 
 import (
-	//		"fmt"
+
 	//"bytes"
 	"math"
 	"math/rand"
@@ -24,6 +24,7 @@ func main() {
 
 	println(n, phi, e, d)
 	// pick e such that 1 < e < phi(n) and gcd(e, phi(n)) = 1
+
 }
 
 func primeGenerator() (uint32, uint32) {
