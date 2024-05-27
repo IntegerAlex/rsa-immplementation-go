@@ -1,6 +1,6 @@
 package main
 import( 
-	//	"fmt"
+//		"fmt"
 	//"bytes"
 	"math"
 	"math/rand"
@@ -10,6 +10,25 @@ import(
 func main(){
 	var p, q uint32 = primeGenerator()
     	println(p, q)
+	var n uint32 = p*q
+	var phi uint32 = (p-1)*(q-1)
+	var e uint32 = 65537
+	var d uint32 = 1/e % phi
+	if(d <= 0){
+		d = d + phi
+	}
+	var publicKey = (n* e)
+	var privateKey = (n* d)
+
+
+        println(publicKey, privateKey)
+
+
+
+
+
+	println(n, phi, e, d)
+	// pick e such that 1 < e < phi(n) and gcd(e, phi(n)) = 1
 }
 
 func primeGenerator() (uint32, uint32){
